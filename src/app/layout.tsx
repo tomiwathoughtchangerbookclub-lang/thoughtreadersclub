@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   description: "ThoughtReadersClub is a private literary society that connects brilliant independent authors with an elite global reading community for a year long journey of deep literary engagement. Founded by Dr. Tomiwa Johnson.",
   keywords: ["ThoughtReadersClub", "literary society", "book club", "readers club", "independent authors", "Dr. Tomiwa Johnson", "book community", "literary engagement"],
   authors: [{ name: "Dr. Tomiwa Johnson" }],
+  icons: {
+    icon: "/images/logo.png",
+  },
   openGraph: {
     title: "ThoughtReadersClub | A Private Literary Society",
     description: "Where intellectual curiosity meets companionable consideration. We connect brilliant independent authors with an elite global reading community.",

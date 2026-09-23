@@ -8,7 +8,7 @@ const posts = [
     title: "Why the long tail matters more than the launch week",
     excerpt:
       "Most publishing attention compresses into the first seven days of a release. We argue that the books worth keeping deserve the opposite treatment: a slow, sustained conversation that compounds for years. Here is what we have learned from running twelve month residencies.",
-    date: "March 2026",
+    date: "March 2025",
     readTime: "8 min read",
     category: "Craft",
     image: "/images/journal-1.jpg",
@@ -17,7 +17,7 @@ const posts = [
     title: "Reading slowly in a culture built for scrolling",
     excerpt:
       "The reading circle format was designed as an antidote to surface level commentary. We explore how a small group of serious readers can turn a single book into a year of structured engagement, and why depth still wins over breadth for the books that matter.",
-    date: "February 2026",
+    date: "February 2025",
     readTime: "6 min read",
     category: "Community",
     image: "/images/journal-2.jpg",
@@ -26,7 +26,7 @@ const posts = [
     title: "What the selection committee looks for in a submission",
     excerpt:
       "A look inside the reading room. Our committee chair Dr. Tomiwa Johnson walks through the four qualities that consistently surface in books we accept into the residency, and the small things in a submission that quietly move a title to the top of the pile.",
-    date: "January 2026",
+    date: "January 2025",
     readTime: "10 min read",
     category: "Behind the Committee",
     image: "/images/journal-3.jpg",

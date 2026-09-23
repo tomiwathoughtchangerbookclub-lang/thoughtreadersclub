@@ -113,7 +113,7 @@ export default function ApplyPage() {
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-10 bg-[#B8924A]" />
               <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B8924A]">
-                Application for the 2026 Residency
+                Application for the Residency
               </span>
             </div>
             <h1 className="font-serif-display text-4xl font-bold leading-tight text-[#F7F2E8] sm:text-5xl md:text-6xl text-balance">

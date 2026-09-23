@@ -56,7 +56,7 @@ export function Hero() {
               href="/apply"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#B8924A] px-8 py-4 text-sm font-semibold text-[#1A2F26] transition-all hover:bg-[#D4AF6E] hover:shadow-xl hover:shadow-[#B8924A]/30"
             >
-              Apply for the 2026 Residency
+              Apply for the Residency
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link

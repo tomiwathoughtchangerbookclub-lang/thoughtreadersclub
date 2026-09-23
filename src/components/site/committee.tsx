@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { BookOpen, Feather, Award, ShieldCheck } from "lucide-react";
+import Image from "next/image";
 
 const pillars = [
   {
@@ -37,15 +38,23 @@ export function Committee() {
             <span className="h-px w-10 bg-[#B8924A]" />
           </div>
 
-          {/* Compact founder icon (no large image board) */}
+          {/* Founder image — the brand logo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6 }}
-            className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full border-2 border-[#B8924A] bg-[#1A2F26] shadow-lg"
+            className="mx-auto mb-8 relative"
           >
-            <BookOpen className="h-8 w-8 text-[#B8924A]" />
+            <div className="relative h-28 w-28 mx-auto rounded-full overflow-hidden ring-4 ring-[#B8924A] shadow-xl bg-[#1A2F26]">
+              <Image
+                src="/images/logo.png"
+                alt="Dr. Tomiwa Johnson"
+                fill
+                className="object-cover"
+                sizes="112px"
+              />
+            </div>
           </motion.div>
 
           <h2 className="font-serif-display text-3xl font-bold leading-tight text-[#1A2F26] sm:text-4xl md:text-5xl text-balance">

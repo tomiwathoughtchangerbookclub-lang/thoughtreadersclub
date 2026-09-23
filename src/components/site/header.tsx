@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, BookOpen } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Philosophy", href: "/#philosophy" },
@@ -36,10 +37,14 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#B8924A]/60 text-[#B8924A] transition-transform group-hover:rotate-12">
-            <BookOpen className="h-5 w-5" />
-          </span>
+        <Link href="/" className="flex items-center gap-3 group">
+          <Image
+            src="/images/logo.png"
+            alt="ThoughtReadersClub logo"
+            width={44}
+            height={44}
+            className="rounded-full transition-transform group-hover:rotate-6"
+          />
           <span className="flex flex-col leading-none">
             <span className="font-serif-display text-xl font-bold tracking-tight text-[#F7F2E8]">
               Thought<span className="text-[#B8924A]">Readers</span>Club
@@ -67,7 +72,7 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
             href="/apply"
             className="inline-flex items-center gap-2 rounded-full bg-[#B8924A] px-5 py-2.5 text-sm font-semibold text-[#1A2F26] transition-all hover:bg-[#D4AF6E] hover:shadow-lg hover:shadow-[#B8924A]/30"
           >
-            Apply for 2026
+            Become a Member
           </Link>
         </div>
 
@@ -98,7 +103,7 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
               onClick={() => setOpen(false)}
               className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-[#B8924A] px-5 py-3 text-sm font-semibold text-[#1A2F26]"
             >
-              Apply for 2026
+              Become a Member
             </Link>
           </nav>
         </div>

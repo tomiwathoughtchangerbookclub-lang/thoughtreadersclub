@@ -1,232 +1,154 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, ArrowRight, BookOpen, Clock, Quote } from "lucide-react";
+import { Star, ArrowRight, Clock, Quote } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { SiteHeader } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 
-// CSS-designed book covers with different color combinations
 const books = [
   {
-    title: "The Quiet Hours",
-    author: "Lena Marchetti",
-    genre: "Literary Fiction",
-    year: "2024",
+    title: "The Kite Runner",
+    author: "Khaled Hosseini",
+    genre: "Historical Fiction",
+    year: "2003",
     rating: 4.9,
     readDate: "March 2025",
     readTime: "9 hours",
-    coverColor: "#1A2F26",
-    coverAccent: "#B8924A",
-    coverText: "#F7F2E8",
+    cover: "/images/books/book-1.jpg",
     review:
-      "A meditation on grief told through the lens of a woman returning to her childhood village in northern Italy. Marchetti writes with a patience that mirrors her subject matter. Every sentence feels weighed before it is set down. Our reading circle spent three weeks on the final chapter alone, and not a single member wanted it to end.",
+      "A devastating story of friendship, betrayal, and redemption set against the backdrop of Afghanistan from the fall of the monarchy to the Taliban. Hosseini writes with a compassion that never tips into sentimentality. Our reading circle spent three weeks on the final chapters alone, and the conversation about what we owe the people who once saved us is still going.",
     reviewer: "Dr. Tomiwa Johnson",
     reviewerRole: "Committee Chair",
   },
   {
-    title: "Salt and Memory",
-    author: "Olu Adeyemi",
-    genre: "Memoir",
-    year: "2024",
+    title: "Half of a Yellow Sun",
+    author: "Chimamanda Ngozi Adichie",
+    genre: "Historical Fiction",
+    year: "2006",
     rating: 4.8,
     readDate: "November 2024",
-    readTime: "7 hours",
-    coverColor: "#2D4538",
-    coverAccent: "#D4AF6E",
-    coverText: "#F7F2E8",
+    readTime: "11 hours",
+    cover: "/images/books/book-2.jpg",
     review:
-      "Adeyemi traces his family through three generations and three continents, anchoring each chapter in a single object his grandmother kept. The result is a memoir that reads like a novel and weighs like one too. We selected it for the 2024 residency cycle and it became the most discussed title of the year.",
+      "Adichie traces three lives through the Biafran war with a steadiness that makes the horror land harder, not softer. She writes about love and politics as if they are the same conversation, which of course they are. The novel became the most discussed title of our 2024 cycle and changed how several members think about historical fiction.",
     reviewer: "Dr. Tomiwa Johnson",
     reviewerRole: "Committee Chair",
   },
   {
-    title: "The Cartographer's Daughter",
-    author: "Imani Okoye",
-    genre: "Historical Fiction",
-    year: "2023",
+    title: "The God of Small Things",
+    author: "Arundhati Roy",
+    genre: "Literary Fiction",
+    year: "1997",
     rating: 4.9,
     readDate: "August 2024",
-    readTime: "12 hours",
-    coverColor: "#3D2817",
-    coverAccent: "#B8924A",
-    coverText: "#F7F2E8",
+    readTime: "10 hours",
+    cover: "/images/books/book-3.jpg",
     review:
-      "Set across Lagos and Lisbon in the 1940s, this novel follows a young woman who inherits her father's mapmaking business and discovers that his maps carried messages for the resistance. Okoye builds a world so textured you can smell the ink. A masterclass in plotting without sacrificing interiority.",
+      "Roy builds a world so textured you can smell the mangoes rotting in the river. The story of twins growing up in Kerala unfolds backward and forward at once, every sentence carrying the weight of what is about to happen. A masterclass in structure that does not sacrifice feeling. The first paragraph alone is worth the price of the book.",
     reviewer: "Dr. Tomiwa Johnson",
     reviewerRole: "Committee Chair",
   },
   {
-    title: "Borrowed Light",
-    author: "Sara Lindqvist",
-    genre: "Essays",
-    year: "2023",
-    rating: 4.7,
+    title: "Things Fall Apart",
+    author: "Chinua Achebe",
+    genre: "Literary Fiction",
+    year: "1958",
+    rating: 4.9,
     readDate: "May 2024",
     readTime: "6 hours",
-    coverColor: "#1A2F26",
-    coverAccent: "#D4AF6E",
-    coverText: "#F7F2E8",
+    cover: "/images/books/book-4.jpg",
     review:
-      "Twelve essays on the books that shaped a life. Lindqvist writes about reading the way most people write about love. The essay on rereading Middlemarch at forty should be required reading for anyone who has ever returned to a book and found it changed.",
+      "The novel that reframed African literature for the world. Achebe tells the story of Okonkwo and the arrival of the colonizers with a clarity that still feels urgent almost seventy years later. We selected it for the residency because every generation of readers deserves to sit with this book. No member has ever regretted the time spent here.",
     reviewer: "Dr. Tomiwa Johnson",
     reviewerRole: "Committee Chair",
   },
   {
-    title: "The Weight of Small Things",
-    author: "Kwame Asante",
-    genre: "Short Stories",
-    year: "2024",
+    title: "Beloved",
+    author: "Toni Morrison",
+    genre: "Literary Fiction",
+    year: "1987",
     rating: 4.8,
     readDate: "February 2025",
-    readTime: "5 hours",
-    coverColor: "#2D4538",
-    coverAccent: "#B8924A",
-    coverText: "#F7F2E8",
+    readTime: "10 hours",
+    cover: "/images/books/book-5.jpg",
     review:
-      "Nine stories, each centered on a single object that changes hands. A wristwatch, a letter, a house key. Asante finds the entire weight of human connection in the smallest transactions. The title story alone is worth the collection, but you will reread all of them.",
+      "Morrison writes about slavery and motherhood with a ferocity that refuses to let the reader look away. The ghost is real and the ghost is metaphor and neither reading diminishes the other. Beloved is one of those rare books that changes a little every time you return to it. Our circle read it twice during the residency year.",
     reviewer: "Dr. Tomiwa Johnson",
     reviewerRole: "Committee Chair",
   },
   {
-    title: "After the Tide",
-    author: "Mira Costa",
+    title: "The Remains of the Day",
+    author: "Kazuo Ishiguro",
     genre: "Literary Fiction",
-    year: "2023",
+    year: "1989",
     rating: 4.9,
     readDate: "October 2024",
-    readTime: "10 hours",
-    coverColor: "#1A2F26",
-    coverAccent: "#D4AF6E",
-    coverText: "#F7F2E8",
-    review:
-      "A coastal town rebuilds after a devastating flood, and Costa follows six families across the first year of recovery. What could have been a disaster narrative becomes a quiet study of community, resilience, and the things people choose to save. The final scene still comes up in our discussions months later.",
-    reviewer: "Dr. Tomiwa Johnson",
-    reviewerRole: "Committee Chair",
-  },
-  {
-    title: "The Untranslated",
-    author: "Daniel Ferreira",
-    genre: "Literary Fiction",
-    year: "2024",
-    rating: 4.7,
-    readDate: "January 2025",
-    readTime: "8 hours",
-    coverColor: "#3D2817",
-    coverAccent: "#D4AF6E",
-    coverText: "#F7F2E8",
-    review:
-      "A novel about a translator who becomes obsessed with a word in a foreign language that has no equivalent in his own. Ferreira turns a linguistic puzzle into a story about love, distance, and the limits of what we can say to each other. Quietly devastating.",
-    reviewer: "Dr. Tomiwa Johnson",
-    reviewerRole: "Committee Chair",
-  },
-  {
-    title: "Houses That Remember",
-    author: "Nadia Petrov",
-    genre: "Memoir",
-    year: "2023",
-    rating: 4.8,
-    readDate: "July 2024",
     readTime: "7 hours",
-    coverColor: "#2D4538",
-    coverAccent: "#B8924A",
-    coverText: "#F7F2E8",
+    cover: "/images/books/book-6.jpg",
     review:
-      "Petrov returns to every house she has ever lived in and writes about what the walls would say if they could. Part memoir, part architectural meditation. The chapter on her grandmother's apartment in Prague is one of the finest pieces of writing we have read in years.",
+      "An English butler takes a rare motoring holiday and confronts a life of service that may have been a life of waste. Ishiguro says more in what he leaves out than most writers do in what they include. The final scene on the pier still comes up in our discussions months later. Quiet, devastating, perfectly constructed.",
     reviewer: "Dr. Tomiwa Johnson",
     reviewerRole: "Committee Chair",
   },
   {
-    title: "The Long Way Home",
-    author: "Tobias Brandt",
-    genre: "Literary Fiction",
-    year: "2024",
-    rating: 4.9,
-    readDate: "April 2025",
-    readTime: "11 hours",
-    coverColor: "#1A2F26",
-    coverAccent: "#B8924A",
-    coverText: "#F7F2E8",
+    title: "One Hundred Years of Solitude",
+    author: "Gabriel Garcia Marquez",
+    genre: "Magical Realism",
+    year: "1967",
+    rating: 4.8,
+    readDate: "January 2025",
+    readTime: "14 hours",
+    cover: "/images/books/book-7.jpg",
     review:
-      "A retired professor walks from Berlin to his childhood home in Romania, fifty years after leaving. Brandt turns a physical journey into an excavation of everything his character has avoided saying for half a century. The pace is slow, deliberate, and completely earned. You will not want it to end.",
+      "The Buendia family rises and falls across seven generations in the fictional town of Macondo, and Marquez makes every page feel like both myth and history. Magical realism at its most generous. The novel demands patience and rewards it tenfold. We scheduled a longer residency cycle for this one and it earned every week.",
+    reviewer: "Dr. Tomiwa Johnson",
+    reviewerRole: "Committee Chair",
+  },
+  {
+    title: "The Book Thief",
+    author: "Markus Zusak",
+    genre: "Historical Fiction",
+    year: "2005",
+    rating: 4.7,
+    readDate: "July 2024",
+    readTime: "11 hours",
+    cover: "/images/books/book-8.jpg",
+    review:
+      "Narrated by Death, set in Nazi Germany, and somehow full of warmth. Zusak tells the story of a foster girl who steals books and shares them with neighbors and with a Jewish man hidden in her basement. The prose is inventive without being precious. A book about the quiet ways people save each other with words.",
+    reviewer: "Dr. Tomiwa Johnson",
+    reviewerRole: "Committee Chair",
+  },
+  {
+    title: "Americanah",
+    author: "Chimamanda Ngozi Adichie",
+    genre: "Literary Fiction",
+    year: "2013",
+    rating: 4.8,
+    readDate: "April 2025",
+    readTime: "12 hours",
+    cover: "/images/books/book-9.jpg",
+    review:
+      "A young Nigerian woman immigrates to the United States and starts a blog about race from the perspective of a non American Black person. Adichie writes about love, exile, and identity with a sharpness that never loses tenderness. Americanah became the gateway book for several new members of our circle and we keep returning to it.",
     reviewer: "Dr. Tomiwa Johnson",
     reviewerRole: "Committee Chair",
   },
 ];
 
-const genres = ["All", "Literary Fiction", "Memoir", "Historical Fiction", "Essays", "Short Stories"];
-
-function BookCover({ book }: { book: (typeof books)[0] }) {
-  return (
-    <div
-      className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-xl flex flex-col justify-between p-6"
-      style={{
-        backgroundColor: book.coverColor,
-        color: book.coverText,
-      }}
-    >
-      {/* Decorative border */}
-      <div
-        className="absolute inset-3 border rounded-md pointer-events-none"
-        style={{ borderColor: `${book.coverAccent}40` }}
-      />
-      {/* Top: genre */}
-      <div className="relative z-10">
-        <div
-          className="text-[10px] uppercase tracking-[0.25em] font-semibold"
-          style={{ color: book.coverAccent }}
-        >
-          {book.genre}
-        </div>
-      </div>
-      {/* Middle: title and author */}
-      <div className="relative z-10">
-        <h3 className="font-serif-display text-xl md:text-2xl font-bold leading-tight">
-          {book.title}
-        </h3>
-        <div
-          className="mt-3 h-px w-12"
-          style={{ backgroundColor: book.coverAccent }}
-        />
-        <p className="mt-3 text-sm font-medium opacity-80">{book.author}</p>
-      </div>
-      {/* Bottom: decoration */}
-      <div className="relative z-10 flex items-center justify-between">
-        <div
-          className="flex h-8 w-8 items-center justify-center rounded-full"
-          style={{ backgroundColor: `${book.coverAccent}30` }}
-        >
-          <BookOpen
-            className="h-4 w-4"
-            style={{ color: book.coverAccent }}
-          />
-        </div>
-        <div
-          className="text-[10px] uppercase tracking-[0.2em] opacity-60"
-        >
-          {book.year}
-        </div>
-      </div>
-      {/* Spine effect */}
-      <div
-        className="absolute left-0 top-0 bottom-0 w-2"
-        style={{
-          backgroundColor: `${book.coverAccent}25`,
-          boxShadow: "inset -1px 0 3px rgba(0,0,0,0.3)",
-        }}
-      />
-    </div>
-  );
-}
+const genres = [
+  "All",
+  "Literary Fiction",
+  "Historical Fiction",
+  "Magical Realism",
+];
 
 export default function BooksPage() {
   const [filter, setFilter] = useState("All");
 
   const filteredBooks =
-    filter === "All"
-      ? books
-      : books.filter((b) => b.genre === filter);
+    filter === "All" ? books : books.filter((b) => b.genre === filter);
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F7F2E8]">
@@ -311,7 +233,17 @@ export default function BooksPage() {
                 transition={{ duration: 0.6, delay: (idx % 3) * 0.1 }}
                 className="group flex flex-col"
               >
-                <BookCover book={book} />
+                {/* Real book cover image */}
+                <div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-xl bg-[#1A2F26]">
+                  <Image
+                    src={book.cover}
+                    alt={`${book.title} by ${book.author} book cover`}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    priority={idx < 3}
+                  />
+                </div>
                 <div className="mt-6 flex-1">
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center gap-1">
@@ -347,8 +279,14 @@ export default function BooksPage() {
                       {book.review}
                     </p>
                     <div className="mt-4 flex items-center gap-3 border-t border-[#E5DCC4] pt-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A2F26] text-xs font-bold text-[#B8924A]">
-                        DTJ
+                      <div className="relative h-8 w-8 overflow-hidden rounded-full bg-[#1A2F26]">
+                        <Image
+                          src="/images/logo.png"
+                          alt={book.reviewer}
+                          fill
+                          className="object-cover"
+                          sizes="32px"
+                        />
                       </div>
                       <div>
                         <div className="text-xs font-semibold text-[#1A2F26]">

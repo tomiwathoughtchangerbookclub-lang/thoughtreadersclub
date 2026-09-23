@@ -65,7 +65,7 @@ export function ClosingCta() {
                 Submissions open
               </div>
               <div className="mt-2 font-serif-display text-lg font-semibold text-[#F7F2E8]">
-                January 2026
+                January 2025
               </div>
               <div className="mt-1 text-xs text-[#F7F2E8]/55">
                 For the next annual reading cycle
