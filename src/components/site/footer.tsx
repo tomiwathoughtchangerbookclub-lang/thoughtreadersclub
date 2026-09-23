@@ -105,7 +105,7 @@ export function Footer() {
               The Reading Room Dispatch
             </h4>
             <p className="mt-5 text-sm leading-relaxed text-[#F7F2E8]/60">
-              A short monthly letter from the committee. New selections, salon
+              A short monthly letter from the committee. New selections, book
               notes, and one essay worth your weekend.
             </p>
             <form

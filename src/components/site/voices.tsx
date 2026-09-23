@@ -9,17 +9,15 @@ const testimonials = [
       "The depth of discussion generated around my book was staggering. ThoughtReadersClub did not just give me readers. They gave my work a legacy, treating the text with a level of consideration that is incredibly rare in the modern publishing landscape.",
     name: "Residency Alumnus",
     role: "Author, 2024 Cycle",
-    image:
-      "https://demo.awaikenthemes.com/hairline/wp-content/uploads/2026/05/our-testimonials-image-1.jpg",
+    initials: "RA",
     perspective: "Author perspective",
   },
   {
     quote:
-      "In a sea of surface level internet commentary, this salon is a sanctuary. The discussions are consistently high signal, challenging, and deeply rewarding. I have read more carefully this year than I have in the last decade.",
-    name: "Core Salon Member",
-    role: "Reader, London Salon",
-    image:
-      "https://demo.awaikenthemes.com/hairline/wp-content/uploads/2026/05/our-testimonials-image-2.jpg",
+      "In a sea of surface level internet commentary, this reading circle is a sanctuary. The discussions are consistently high signal, challenging, and deeply rewarding. I have read more carefully this year than I have in the last decade.",
+    name: "Core Book Club Member",
+    role: "Reader, London Circle",
+    initials: "CB",
     perspective: "Reader perspective",
   },
   {
@@ -27,8 +25,7 @@ const testimonials = [
       "What sets this community apart is the patience. My book was given a full year of serious engagement, and the reviews that came out of it still surface in conversations eighteen months later. That kind of long tail momentum is impossible to manufacture.",
     name: "Independent Author",
     role: "Residency, 2023 Cycle",
-    image:
-      "https://demo.awaikenthemes.com/hairline/wp-content/uploads/2026/05/our-testimonials-image-3.jpg",
+    initials: "IA",
     perspective: "Author perspective",
   },
 ];
@@ -84,11 +81,9 @@ export function Voices() {
                 {t.quote}
               </p>
               <div className="mt-8 flex items-center gap-4 border-t border-[#F7F2E8]/10 pt-6">
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  className="h-12 w-12 rounded-full object-cover ring-2 ring-[#B8924A]/40"
-                />
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#B8924A]/20 font-serif-display text-base font-bold text-[#B8924A]">
+                  {t.initials}
+                </div>
                 <div>
                   <div className="font-serif-display text-base font-semibold text-[#F7F2E8]">
                     {t.name}

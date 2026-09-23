@@ -19,7 +19,7 @@ export function About() {
             <div className="relative">
               <img
                 src="/images/about-desk.jpg"
-                alt="A writing desk with an open book, fountain pen, and porcelain teacup"
+                alt="A writing desk with an open book and a fountain pen"
                 className="w-full rounded-2xl object-cover shadow-2xl shadow-[#1A2F26]/20"
               />
               <div className="absolute -bottom-6 -right-6 hidden md:block">

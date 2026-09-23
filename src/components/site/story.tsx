@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 const timeline = [
   {
     year: "2021",
-    title: "The First Salon",
+    title: "The First Reading Circle",
     body: "A handful of readers gathered in a borrowed study to discuss an overlooked debut novel. That single evening became the model for everything that followed: small rooms, serious questions, and books that deserved more attention than they had received.",
   },
   {
     year: "2023",
     title: "Five Thousand Members",
-    body: "Through quiet recommendations and word of mouth, the community crossed five thousand engaged readers. We formalized the weekly salon format and opened our first private digital channels for international members.",
+    body: "Through quiet recommendations and word of mouth, the community crossed five thousand engaged readers. We formalized the weekly book discussion format and opened our first private digital channels for international members.",
   },
   {
     year: "2024",
@@ -21,7 +21,7 @@ const timeline = [
   {
     year: "2025",
     title: "A Global Hub",
-    body: "ThoughtReadersClub now spans continents, with active salons in nine cities and a digital hub of more than twenty one thousand engaged readers. The selection committee reviews hundreds of independent titles each year to find the rare few that match our standard.",
+    body: "ThoughtReadersClub now spans continents, with active reading circles in nine cities and a digital hub of more than twenty one thousand engaged readers. The selection committee reviews hundreds of independent titles each year to find the rare few that match our standard.",
   },
 ];
 

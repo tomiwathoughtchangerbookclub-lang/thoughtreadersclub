@@ -91,3 +91,49 @@ Stage Summary:
 - Content adapted from croissants website with coffee references removed
 - Layout follows hairline theme section ordering (Hero, About, Services, Why Choose Us, History, Pricing, Team, Testimonials, FAQ, Blog, Contact, Footer)
 - Dev server running cleanly, no runtime errors
+
+---
+Task ID: 3
+Agent: main
+Task: Remove all salon/coffee/drink/tea references, remove unnecessary images, remove contact form
+
+Work Log:
+- Searched and found every "salon", "coffee", "drink", "teacup", "porcelain", "tea" reference across all components
+- Replaced all salon terminology with reader/book equivalents:
+  * hero.tsx: "Active Salon Readers" → "Active Book Readers"
+  * residency.tsx: "hosted salons" → "hosted book groups", "High Signal Salon Discussions" → "High Signal Book Discussions", "active social salons" → "active book discussions"
+  * story.tsx: "The First Salon" → "The First Reading Circle", "weekly salon format" → "weekly book discussion format", "active salons in nine cities" → "active reading circles in nine cities"
+  * committee.tsx: Margaret bio "designs the salon format" → "designs the reading circle format"
+  * voices.tsx: testimonial copy rewritten, "Core Salon Member" → "Core Book Club Member", "London Salon" → "London Circle"
+  * faq.tsx: "weekly salon discussions" → "weekly book discussions", "what they hope to gain from the salon" → "from the book club", "weekly salons" → "weekly book discussions"
+  * journal.tsx: "The salon format" → "The reading circle format"
+  * membership.tsx: "Salon Reader" → "Book Reader", "active reading salons" → "active book discussions", "Weekly hosted salon access" → "Weekly hosted book group access", "host private salon events" → "host private book events", "Private salon hosting rights" → "Private book event hosting rights", "Featured salon appearances" → "Featured book event appearances"
+  * why-choose.tsx: "inside our salons" → "inside our reading circles"
+  * footer.tsx: "salon notes" → "book notes"
+  * about.tsx: removed "porcelain teacup" from alt text
+- Removed the entire contact form section:
+  * Deleted src/components/site/contact-cta.tsx
+  * Deleted unused /public/images/cta-reader.jpg
+  * Created new src/components/site/closing-cta.tsx — clean CTA with mailto link, no form, plus 3 info cards (Submissions open January 2026, 15 slots per year, Response within 4 weeks)
+  * Updated src/app/page.tsx imports to use ClosingCta instead of ContactCta
+- Removed all unnecessary stock images from the hairline theme:
+  * why-choose-us-image.png — replaced with decorative emerald panel showing "96% member renewal" stat
+  * team-1.jpg, team-2.jpg, team-3.jpg — replaced with initials-based avatars (DT, AO, MH) on emerald background
+  * our-testimonials-image-1/2/3.jpg — replaced with initials-based avatars (RA, CB, IA) on gold background
+  * post-1/2/3.jpg — replaced with category-name typographic panels (Craft, Community, Behind the Committee) on emerald background
+  * Removed unused Linkedin/Mail icon imports from committee.tsx
+- Only 2 images remain on the site: hero-library.jpg (hero) and about-desk.jpg (philosophy section) — both custom-generated literary images
+- Ran ESLint: clean, no errors or warnings
+- Verified with agent-browser:
+  * Page loads successfully on desktop (1440x900) and mobile (390x844)
+  * All section headings now use book/reader terminology (no "salon")
+  * No console errors, no page errors
+  * HTTP 200 on all requests
+  * Final dev log shows clean compilation
+
+Stage Summary:
+- ThoughtReadersClub landing page now strictly focuses on books and readers
+- All salon, coffee, drink, teacup, porcelain, tea references eliminated
+- Contact form removed entirely — replaced with clean mailto CTA
+- All unnecessary stock images removed — site now uses only 2 custom literary images plus typographic panels for visual interest
+- Page renders cleanly across desktop and mobile, no errors

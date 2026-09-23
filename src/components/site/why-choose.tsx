@@ -49,7 +49,7 @@ export function WhyChooseUs() {
               We do not run a marketing program dressed up as a book club. Our
               community is built on mutual respect and intellectual rigor. Every
               decision we make is designed to protect the quality of the
-              conversations that happen inside our salons and to give serious
+              conversations that happen inside our reading circles and to give serious
               books the lasting attention they deserve.
             </p>
 
@@ -72,7 +72,7 @@ export function WhyChooseUs() {
             </div>
           </motion.div>
 
-          {/* Image */}
+          {/* Visual panel replacing the unnecessary stock image */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -80,12 +80,19 @@ export function WhyChooseUs() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="overflow-hidden rounded-2xl">
-              <img
-                src="https://demo.awaikenthemes.com/hairline/wp-content/uploads/2026/05/why-choose-us-image.png"
-                alt="A reader surrounded by books in a quiet study"
-                className="w-full object-cover"
-              />
+            <div className="overflow-hidden rounded-2xl bg-[#1A2F26] p-10">
+              <div className="relative z-10">
+                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B8924A]">
+                  Why members stay
+                </div>
+                <div className="mt-4 font-serif-display text-3xl font-bold leading-tight text-[#F7F2E8]">
+                  96 percent of members renew their reading membership every year.
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-[#F7F2E8]/70">
+                  The reason is simple. We do not chase trends, we do not pad our shelves with quick releases, and we treat every selected book as a year long conversation worth finishing.
+                </p>
+              </div>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[#1A2F26] via-[#1A2F26]/80 to-[#B8924A]/15" />
             </div>
             <div className="absolute -right-4 -top-4 -z-10 h-32 w-32 rounded-full bg-[#1A2F26]/10 blur-2xl" />
             <div className="mt-6 grid grid-cols-3 gap-4">

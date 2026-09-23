@@ -5,7 +5,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 const stats = [
   { value: "21,000+", label: "Global Hub Members" },
-  { value: "2,000+", label: "Active Salon Readers" },
+  { value: "2,000+", label: "Active Book Readers" },
   { value: "150+", label: "Reviews per Selection" },
   { value: "15", label: "Authors per Annual Cycle" },
 ];

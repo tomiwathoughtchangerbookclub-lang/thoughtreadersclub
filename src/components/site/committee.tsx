@@ -1,29 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Linkedin, Mail } from "lucide-react";
 
 const committee = [
   {
     name: "Dr. Tomiwa",
     role: "Founder and Selection Committee Chair",
-    image:
-      "https://demo.awaikenthemes.com/hairline/wp-content/uploads/2026/05/team-1.jpg",
+    initials: "DT",
     bio: "Dr. Tomiwa founded ThoughtReadersClub in 2021 with a simple conviction that the best independent writing deserves a longer, more serious conversation. With roots in narrative structure and community building, he leads the selection committee and steers the annual residency cycle.",
   },
   {
     name: "Adaeze Okonkwo",
     role: "Senior Literary Curator",
-    image:
-      "https://demo.awaikenthemes.com/hairline/wp-content/uploads/2026/05/team-2.jpg",
+    initials: "AO",
     bio: "Adaeze reviews hundreds of independent titles each year alongside Dr. Tomiwa. She brings two decades of editorial experience and a particular interest in voices writing from the African continent and its diaspora.",
   },
   {
     name: "Margaret Holloway",
     role: "Cultural Programs Advisor",
-    image:
-      "https://demo.awaikenthemes.com/hairline/wp-content/uploads/2026/05/team-3.jpg",
-    bio: "Margaret designs the salon format and oversees the global cultural calendar. She has organized literary events across three continents and is the reason each residency feels like a curated journey rather than a checklist.",
+    initials: "MH",
+    bio: "Margaret designs the reading circle format and oversees the global cultural calendar. She has organized literary events across three continents and is the reason each residency feels like a curated journey rather than a checklist.",
   },
 ];
 
@@ -63,29 +59,11 @@ export function Committee() {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               className="group overflow-hidden rounded-2xl border border-[#E5DCC4] bg-white transition-all hover:shadow-xl hover:shadow-[#1A2F26]/10"
             >
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F26]/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 flex gap-2">
-                  <a
-                    href="#contact"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F7F2E8]/90 text-[#1A2F26] transition-colors hover:bg-[#B8924A]"
-                    aria-label={`Email ${member.name}`}
-                  >
-                    <Mail className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="#contact"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F7F2E8]/90 text-[#1A2F26] transition-colors hover:bg-[#B8924A]"
-                    aria-label={`LinkedIn profile of ${member.name}`}
-                  >
-                    <Linkedin className="h-4 w-4" />
-                  </a>
+              <div className="relative aspect-[4/3] overflow-hidden bg-[#1A2F26] flex items-center justify-center">
+                <div className="font-serif-display text-6xl font-bold text-[#B8924A]">
+                  {member.initials}
                 </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F26]/60 via-transparent to-transparent" />
               </div>
               <div className="p-6">
                 <h3 className="font-serif-display text-xl font-bold text-[#1A2F26]">

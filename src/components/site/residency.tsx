@@ -14,13 +14,13 @@ const services = [
     icon: CalendarRange,
     title: "Structured Reading Journey",
     description:
-      "When a book is selected, it enters a twelve month ecosystem of guided deep engagement with an elite reader base. Every month brings new discussion prompts, hosted salons, and structured reading pathways that turn a single title into a year long conversation.",
+      "When a book is selected, it enters a twelve month ecosystem of guided deep engagement with an elite reader base. Every month brings new discussion prompts, hosted book groups, and structured reading pathways that turn a single title into a year long conversation.",
   },
   {
     icon: MessageSquareQuote,
-    title: "High Signal Salon Discussions",
+    title: "High Signal Book Discussions",
     description:
-      "Our private channels and active social salons generate consistent analytical commentary that reflects the true depth of each work. Members meet weekly in small groups to examine language, structure, and the cultural questions a book raises.",
+      "Our private channels and active book discussions generate consistent analytical commentary that reflects the true depth of each work. Members meet weekly in small groups to examine language, structure, and the cultural questions a book raises.",
   },
   {
     icon: TrendingUp,

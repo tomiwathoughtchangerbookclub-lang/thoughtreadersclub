@@ -5,14 +5,14 @@ import { Check, ArrowRight } from "lucide-react";
 
 const tiers = [
   {
-    name: "Salon Reader",
+    name: "Book Reader",
     audience: "For serious readers",
     price: "Apply",
     priceNote: "Annual membership",
     description:
-      "For individuals who want to participate in active reading salons and access our private discussion channels alongside a global community of engaged readers.",
+      "For individuals who want to participate in active book discussions and access our private reading channels alongside a global community of engaged readers.",
     features: [
-      "Weekly hosted salon access",
+      "Weekly hosted book group access",
       "Private digital reading channels",
       "Quarterly author Q&A invitations",
       "Curated reading lists every cycle",
@@ -26,11 +26,11 @@ const tiers = [
     price: "By invitation",
     priceNote: "Annual sponsorship",
     description:
-      "For supporters who want to sponsor residencies, host private salon events, and gain access to the inner circle of the selection committee deliberations.",
+      "For supporters who want to sponsor residencies, host private book events, and gain access to the inner circle of the selection committee deliberations.",
     features: [
-      "Everything in Salon Reader",
+      "Everything in Book Reader",
       "Sponsor a residency cycle",
-      "Private salon hosting rights",
+      "Private book event hosting rights",
       "Selection committee briefings",
       "Annual patron dinner invitation",
     ],
@@ -47,7 +47,7 @@ const tiers = [
       "Twelve month structured engagement",
       "Direct committee access",
       "High signal review velocity",
-      "Featured salon appearances",
+      "Featured book event appearances",
       "Permanent archive recognition",
     ],
     highlighted: false,

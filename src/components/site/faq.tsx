@@ -22,17 +22,17 @@ const faqs = [
   {
     question: "What does the twelve month residency actually include?",
     answer:
-      "Selected authors receive a structured year long engagement program. That includes weekly salon discussions around your work, private digital channels for analytical commentary, hosted author Q&A sessions, direct access to the selection committee, and the long tail review momentum that comes from a community treating your book as a permanent cultural contribution rather than a one time release.",
+      "Selected authors receive a structured year long engagement program. That includes weekly book discussions around your work, private digital channels for analytical commentary, hosted author Q&A sessions, direct access to the selection committee, and the long tail review momentum that comes from a community treating your book as a permanent cultural contribution rather than a one time release.",
   },
   {
     question: "Can anyone join as a reader?",
     answer:
-      "Membership as a reader is by application. We keep the community intentionally small to protect the quality of conversation. Prospective members complete a short application that helps us understand reading habits and what they hope to gain from the salon. Most applicants hear back within two weeks of submitting.",
+      "Membership as a reader is by application. We keep the community intentionally small to protect the quality of conversation. Prospective members complete a short application that helps us understand reading habits and what they hope to gain from the book club. Most applicants hear back within two weeks of submitting.",
   },
   {
     question: "How is this different from a regular book club?",
     answer:
-      "A typical book club meets once a month around a single title and moves on. Our residency treats one book as the focus of a full year of structured engagement, with weekly salons, analytical commentary, and a permanent archive of discussion. The point is not to consume more books. It is to give the right books the lasting attention they deserve.",
+      "A typical book club meets once a month around a single title and moves on. Our residency treats one book as the focus of a full year of structured engagement, with weekly book discussions, analytical commentary, and a permanent archive of discussion. The point is not to consume more books. It is to give the right books the lasting attention they deserve.",
   },
   {
     question: "Who funds the community infrastructure?",

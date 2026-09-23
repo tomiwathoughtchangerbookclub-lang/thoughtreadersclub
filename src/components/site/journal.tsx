@@ -10,18 +10,14 @@ const posts = [
       "Most publishing attention compresses into the first seven days of a release. We argue that the books worth keeping deserve the opposite treatment: a slow, sustained conversation that compounds for years. Here is what we have learned from running twelve month residencies.",
     date: "March 2026",
     readTime: "8 min read",
-    image:
-      "https://demo.awaikenthemes.com/hairline/wp-content/uploads/2026/05/post-1.jpg",
     category: "Craft",
   },
   {
     title: "Reading slowly in a culture built for scrolling",
     excerpt:
-      "The salon format was designed as an antidote to surface level commentary. We explore how a small group of serious readers can turn a single book into a year of structured engagement, and why depth still wins over breadth for the books that matter.",
+      "The reading circle format was designed as an antidote to surface level commentary. We explore how a small group of serious readers can turn a single book into a year of structured engagement, and why depth still wins over breadth for the books that matter.",
     date: "February 2026",
     readTime: "6 min read",
-    image:
-      "https://demo.awaikenthemes.com/hairline/wp-content/uploads/2026/05/post-2.jpg",
     category: "Community",
   },
   {
@@ -30,8 +26,6 @@ const posts = [
       "A look inside the reading room. Our committee chair Dr. Tomiwa walks through the four qualities that consistently surface in books we accept into the residency, and the small things in a submission that quietly move a title to the top of the pile.",
     date: "January 2026",
     readTime: "10 min read",
-    image:
-      "https://demo.awaikenthemes.com/hairline/wp-content/uploads/2026/05/post-3.jpg",
     category: "Behind the Committee",
   },
 ];
@@ -71,15 +65,16 @@ export function Journal() {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               className="group flex flex-col overflow-hidden rounded-2xl border border-[#E5DCC4] bg-white transition-all hover:shadow-xl hover:shadow-[#1A2F26]/10"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute top-4 left-4 rounded-full bg-[#1A2F26]/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#B8924A]">
-                  {post.category}
+              <div className="relative aspect-[4/3] overflow-hidden bg-[#1A2F26] flex items-center justify-center p-8">
+                <div className="text-center">
+                  <div className="font-serif-display text-5xl font-bold text-[#B8924A]">
+                    {post.category}
+                  </div>
+                  <div className="mt-2 text-xs uppercase tracking-[0.25em] text-[#F7F2E8]/60">
+                    From the Reading Room
+                  </div>
                 </div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#1A2F26]/40 via-transparent to-[#B8924A]/10" />
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <div className="flex items-center gap-3 text-xs text-[#5C6B5F]">

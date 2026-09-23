@@ -9,7 +9,7 @@ import { Committee } from "@/components/site/committee";
 import { Voices } from "@/components/site/voices";
 import { Faq } from "@/components/site/faq";
 import { Journal } from "@/components/site/journal";
-import { ContactCta } from "@/components/site/contact-cta";
+import { ClosingCta } from "@/components/site/closing-cta";
 import { Footer } from "@/components/site/footer";
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
         <Voices />
         <Faq />
         <Journal />
-        <ContactCta />
+        <ClosingCta />
       </main>
       <Footer />
     </div>
