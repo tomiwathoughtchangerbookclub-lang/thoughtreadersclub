@@ -78,7 +78,7 @@ export function About() {
               </div>
               <div>
                 <div className="font-serif-display text-lg font-semibold text-[#1A2F26]">
-                  Dr. Tomiwa
+                  Dr. Tomiwa Johnson
                 </div>
                 <div className="text-sm text-[#5C6B5F]">
                   Founder and Selection Committee Chair

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, BookOpen } from "lucide-react";
+import Link from "next/link";
 
 export function ClosingCta() {
   return (
@@ -42,13 +43,19 @@ export function ClosingCta() {
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href="mailto:committee@thoughtreadersclub.com"
+            <Link
+              href="/apply"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#B8924A] px-8 py-4 text-sm font-semibold text-[#1A2F26] transition-all hover:bg-[#D4AF6E] hover:shadow-xl hover:shadow-[#B8924A]/30"
             >
-              <Mail className="h-4 w-4" />
-              committee@thoughtreadersclub.com
+              Start your application
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <a
+              href="mailto:committee@thoughtreadersclub.com"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#F7F2E8]/30 px-8 py-4 text-sm font-semibold text-[#F7F2E8] transition-all hover:border-[#B8924A] hover:text-[#B8924A]"
+            >
+              <Mail className="h-4 w-4" />
+              Email the committee
             </a>
           </div>
 

@@ -19,9 +19,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "ThoughtReadersClub | A Private Literary Society for Curious Minds",
-  description: "ThoughtReadersClub is a private literary society that connects brilliant independent authors with an elite global reading community for a year long journey of deep literary engagement. Founded by Dr. Tomiwa.",
-  keywords: ["ThoughtReadersClub", "literary society", "book club", "readers club", "independent authors", "Dr. Tomiwa", "book community", "literary engagement"],
-  authors: [{ name: "Dr. Tomiwa" }],
+  description: "ThoughtReadersClub is a private literary society that connects brilliant independent authors with an elite global reading community for a year long journey of deep literary engagement. Founded by Dr. Tomiwa Johnson.",
+  keywords: ["ThoughtReadersClub", "literary society", "book club", "readers club", "independent authors", "Dr. Tomiwa Johnson", "book community", "literary engagement"],
+  authors: [{ name: "Dr. Tomiwa Johnson" }],
   openGraph: {
     title: "ThoughtReadersClub | A Private Literary Society",
     description: "Where intellectual curiosity meets companionable consideration. We connect brilliant independent authors with an elite global reading community.",
@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body
         className={`${playfair.variable} ${inter.variable} antialiased bg-background text-foreground`}
       >

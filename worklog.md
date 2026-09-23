@@ -137,3 +137,62 @@ Stage Summary:
 - Contact form removed entirely — replaced with clean mailto CTA
 - All unnecessary stock images removed — site now uses only 2 custom literary images plus typographic panels for visual interest
 - Page renders cleanly across desktop and mobile, no errors
+
+---
+Task ID: 4
+Agent: main
+Task: Remove Adaeze/Margaret, rename to Dr. Tomiwa Johnson, add book images to journal, create /books and /apply pages, update all button links
+
+Work Log:
+- Removed Adaeze Okonkwo and Margaret Holloway from committee.tsx entirely
+- Rewrote committee.tsx to feature only Dr. Tomiwa Johnson as sole founder, with a founder card (DTJ initials avatar) and 3 pillars (Literary Merit First, Independent Voice, Permanent Recognition)
+- Global rename: "Dr. Tomiwa" → "Dr. Tomiwa Johnson" in all files (layout.tsx metadata, about.tsx, committee.tsx, journal.tsx, footer.tsx)
+- Generated 3 new book-themed images for journal post cards:
+  * journal-1.jpg: stack of vintage hardcover books with reading glasses
+  * journal-2.jpg: open hardcover book on emerald velvet
+  * journal-3.jpg: close-up of dark wooden bookshelf
+- Updated journal.tsx to use real book images instead of typographic panels
+- Updated header.tsx:
+  * Added `solid` prop for sub-pages (always solid background)
+  * Added "Books" to nav links
+  * All links use next/link for client-side navigation
+  * "Apply for 2026" button links to /apply
+- Updated hero.tsx:
+  * "Apply for the 2026 Residency" button → links to /apply
+  * "Explore the Society" button → links to /books
+- Updated membership.tsx: all 3 "Get Started" buttons → link to /apply
+- Updated closing-cta.tsx: "Start your application" → links to /apply, plus secondary "Email the committee" mailto button
+- Updated footer.tsx: all links use next/link, "Apply for 2026" → /apply, "Books We Read" → /books, footer credit "Founded by Dr. Tomiwa Johnson"
+- Created /books page (src/app/books/page.tsx):
+  * Page hero with emerald gradient background
+  * 9 books with CSS-designed covers (different color combinations per book)
+  * Each book card shows: cover, title, author, genre, rating (stars), read time, review by Dr. Tomiwa Johnson, read date
+  * Genre filter buttons (All, Literary Fiction, Memoir, Historical Fiction, Essays, Short Stories)
+  * CTA at bottom linking to /apply
+  * Real book titles and authors: The Quiet Hours, Salt and Memory, The Cartographer's Daughter, Borrowed Light, The Weight of Small Things, After the Tide, The Untranslated, Houses That Remember, The Long Way Home
+  * Each review is substantial natural prose written by Dr. Tomiwa Johnson
+- Created /apply page (src/app/apply/page.tsx):
+  * Page hero with "Back to home" link
+  * Sidebar with 3 benefits (Twelve month residency, 21,000+ engaged readers, Permanent recognition) + response time card
+  * Full application form with fields: Full name, Email, Role (Author/Reader/Patron/Press), Genre (8 options), Book title, Publisher, Page count, Synopsis, Why this book belongs in ThoughtReadersClub, Additional message
+  * Form submission shows success state: "Thank you for your submission" with Dr. Tomiwa Johnson reference, plus "Submit another response" and "Browse the reading shelf" buttons
+- Fixed Next.js scroll-behavior warning by adding data-scroll-behavior="smooth" to html element
+- Ran ESLint: clean
+- Verified with agent-browser:
+  * Home page: Only "Dr. Tomiwa Johnson" appears (no Adaeze, no Margaret, no salon)
+  * /books page: All 9 books render with CSS covers, genre filter works (tested Memoir → shows 2 books)
+  * /apply page: Form renders with all fields, submission shows success state
+  * "Explore the Society" button → navigates to /books
+  * "Get Started" buttons → navigate to /apply
+  * All pages return HTTP 200
+  * Mobile responsive on all 3 pages (390x844)
+  * No console errors
+
+Stage Summary:
+- ThoughtReadersClub now has 3 pages: Home (/), Books (/books), Apply (/apply)
+- Dr. Tomiwa Johnson is the sole founder referenced throughout
+- Journal cards now have real book images
+- All "Get Started" buttons lead to the application form page
+- "Explore the Society" leads to the books we've read and reviewed page
+- Books page has 9 books with CSS-designed covers, genre filtering, and reviews by Dr. Tomiwa Johnson
+- Apply page has a comprehensive form with success state

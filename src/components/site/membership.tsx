@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const tiers = [
   {
@@ -150,8 +151,8 @@ export function Membership() {
                 ))}
               </ul>
 
-              <a
-                href="#contact"
+              <Link
+                href="/apply"
                 className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all ${
                   tier.highlighted
                     ? "bg-[#B8924A] text-[#1A2F26] hover:bg-[#D4AF6E]"
@@ -160,7 +161,7 @@ export function Membership() {
               >
                 Get started
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 const stats = [
   { value: "21,000+", label: "Global Hub Members" },
@@ -51,19 +52,19 @@ export function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a
-              href="#contact"
+            <Link
+              href="/apply"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#B8924A] px-8 py-4 text-sm font-semibold text-[#1A2F26] transition-all hover:bg-[#D4AF6E] hover:shadow-xl hover:shadow-[#B8924A]/30"
             >
               Apply for the 2026 Residency
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
-              href="#philosophy"
+            </Link>
+            <Link
+              href="/books"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-[#F7F2E8]/30 px-8 py-4 text-sm font-semibold text-[#F7F2E8] transition-all hover:border-[#B8924A] hover:text-[#B8924A]"
             >
               Explore the Society
-            </a>
+            </Link>
           </div>
         </motion.div>
 

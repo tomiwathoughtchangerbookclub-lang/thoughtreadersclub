@@ -1,20 +1,21 @@
 "use client";
 
 import { BookOpen, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
 
 const quickLinks = [
-  { label: "Philosophy", href: "#philosophy" },
-  { label: "The Residency", href: "#residency" },
-  { label: "Membership", href: "#membership" },
-  { label: "Committee", href: "#committee" },
-  { label: "Voices", href: "#voices" },
+  { label: "Philosophy", href: "/#philosophy" },
+  { label: "The Residency", href: "/#residency" },
+  { label: "Membership", href: "/#membership" },
+  { label: "Committee", href: "/#committee" },
+  { label: "Voices", href: "/#voices" },
 ];
 
 const moreLinks = [
-  { label: "The Journal", href: "#journal" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Apply for 2026", href: "#contact" },
-  { label: "Reading Room", href: "#journal" },
+  { label: "The Journal", href: "/#journal" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Apply for 2026", href: "/apply" },
+  { label: "Books We Read", href: "/books" },
 ];
 
 export function Footer() {
@@ -24,7 +25,7 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr_1fr_1.2fr]">
           {/* Brand */}
           <div>
-            <a href="#top" className="flex items-center gap-2.5">
+            <Link href="/" className="flex items-center gap-2.5">
               <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#B8924A]/60 text-[#B8924A]">
                 <BookOpen className="h-5 w-5" />
               </span>
@@ -36,7 +37,7 @@ export function Footer() {
                   A Private Literary Society
                 </span>
               </span>
-            </a>
+            </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-[#F7F2E8]/60">
               An independent private literary society connecting brilliant
               independent authors with an elite global reading community for a
@@ -51,7 +52,7 @@ export function Footer() {
               ].map((s) => (
                 <a
                   key={s.label}
-                  href="#contact"
+                  href="mailto:committee@thoughtreadersclub.com"
                   aria-label={s.label}
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-[#F7F2E8]/15 text-[#F7F2E8]/70 transition-colors hover:border-[#B8924A] hover:bg-[#B8924A] hover:text-[#1A2F26]"
                 >
@@ -69,12 +70,12 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-[#F7F2E8]/70 transition-colors hover:text-[#B8924A]"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -88,12 +89,12 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {moreLinks.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-[#F7F2E8]/70 transition-colors hover:text-[#B8924A]"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -130,7 +131,7 @@ export function Footer() {
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-[#F7F2E8]/10 pt-8 md:flex-row">
           <p className="text-xs text-[#F7F2E8]/50">
             © 2026 ThoughtReadersClub. All rights reserved. Founded by Dr.
-            Tomiwa.
+            Tomiwa Johnson.
           </p>
           <div className="flex gap-6 text-xs text-[#F7F2E8]/50">
             <a href="#" className="transition-colors hover:text-[#B8924A]">

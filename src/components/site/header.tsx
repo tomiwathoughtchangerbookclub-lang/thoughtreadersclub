@@ -2,18 +2,19 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, BookOpen } from "lucide-react";
+import Link from "next/link";
 
 const navLinks = [
-  { label: "Philosophy", href: "#philosophy" },
-  { label: "Residency", href: "#residency" },
-  { label: "Membership", href: "#membership" },
-  { label: "Committee", href: "#committee" },
-  { label: "Voices", href: "#voices" },
-  { label: "Journal", href: "#journal" },
-  { label: "Contact", href: "#contact" },
+  { label: "Philosophy", href: "/#philosophy" },
+  { label: "Residency", href: "/#residency" },
+  { label: "Membership", href: "/#membership" },
+  { label: "Committee", href: "/#committee" },
+  { label: "Voices", href: "/#voices" },
+  { label: "Journal", href: "/#journal" },
+  { label: "Books", href: "/books" },
 ];
 
-export function SiteHeader() {
+export function SiteHeader({ solid = false }: { solid?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -24,16 +25,18 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const isSolid = solid || scrolled;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+        isSolid
           ? "bg-[#1A2F26]/95 backdrop-blur-md py-3 shadow-lg shadow-black/20"
           : "bg-transparent py-5"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="flex items-center gap-2.5 group">
+        <Link href="/" className="flex items-center gap-2.5 group">
           <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#B8924A]/60 text-[#B8924A] transition-transform group-hover:rotate-12">
             <BookOpen className="h-5 w-5" />
           </span>
@@ -45,27 +48,27 @@ export function SiteHeader() {
               A Private Literary Society
             </span>
           </span>
-        </a>
+        </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="nav-link text-sm font-medium text-[#F7F2E8]/85 transition-colors hover:text-[#B8924A]"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="hidden lg:block">
-          <a
-            href="#contact"
+          <Link
+            href="/apply"
             className="inline-flex items-center gap-2 rounded-full bg-[#B8924A] px-5 py-2.5 text-sm font-semibold text-[#1A2F26] transition-all hover:bg-[#D4AF6E] hover:shadow-lg hover:shadow-[#B8924A]/30"
           >
             Apply for 2026
-          </a>
+          </Link>
         </div>
 
         <button
@@ -81,22 +84,22 @@ export function SiteHeader() {
         <div className="lg:hidden bg-[#1A2F26] border-t border-[#B8924A]/20 px-5 py-6">
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="text-sm font-medium text-[#F7F2E8]/85 transition-colors hover:text-[#B8924A]"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#contact"
+            <Link
+              href="/apply"
               onClick={() => setOpen(false)}
               className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-[#B8924A] px-5 py-3 text-sm font-semibold text-[#1A2F26]"
             >
               Apply for 2026
-            </a>
+            </Link>
           </nav>
         </div>
       )}
