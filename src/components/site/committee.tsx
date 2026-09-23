@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BookOpen, Feather, Award } from "lucide-react";
+import { BookOpen, Feather, Award, ShieldCheck } from "lucide-react";
 
 const pillars = [
   {
@@ -27,95 +27,85 @@ const pillars = [
 export function Committee() {
   return (
     <section id="committee" className="relative bg-[#F7F2E8] py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Founder card */}
+      <div className="mx-auto max-w-5xl px-5 sm:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="mb-5 flex items-center justify-center gap-3">
+            <span className="h-px w-10 bg-[#B8924A]" />
+            <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B8924A]">
+              The Founder
+            </span>
+            <span className="h-px w-10 bg-[#B8924A]" />
+          </div>
+
+          {/* Compact founder icon (no large image board) */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6 }}
+            className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full border-2 border-[#B8924A] bg-[#1A2F26] shadow-lg"
           >
-            <div className="overflow-hidden rounded-2xl border border-[#E5DCC4] bg-white shadow-xl shadow-[#1A2F26]/10">
-              <div className="relative aspect-[4/3] overflow-hidden bg-[#1A2F26] flex items-center justify-center">
-                <div className="font-serif-display text-8xl font-bold text-[#B8924A]">
-                  DTJ
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#1A2F26]/80 via-transparent to-[#B8924A]/15" />
-                <div className="absolute bottom-4 left-6">
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-[#B8924A]">
-                    Founder
-                  </div>
-                  <div className="font-serif-display text-lg text-[#F7F2E8]">
-                    Since 2021
-                  </div>
-                </div>
-              </div>
-              <div className="p-8">
-                <h3 className="font-serif-display text-2xl font-bold text-[#1A2F26]">
-                  Dr. Tomiwa Johnson
-                </h3>
-                <div className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#B8924A]">
-                  Founder and Selection Committee Chair
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-[#5C6B5F]">
-                  Dr. Tomiwa Johnson founded ThoughtReadersClub in 2021 with a
-                  simple conviction that the best independent writing deserves a
-                  longer, more serious conversation. With roots in narrative
-                  structure and community building, he leads the selection
-                  committee, steers the annual residency cycle, and personally
-                  reads every submission that reaches the shortlist.
-                </p>
-              </div>
-            </div>
+            <BookOpen className="h-8 w-8 text-[#B8924A]" />
           </motion.div>
 
-          {/* Text and pillars */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#B8924A]" />
-              <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B8924A]">
-                The Committee
-              </span>
-            </div>
+          <h2 className="font-serif-display text-3xl font-bold leading-tight text-[#1A2F26] sm:text-4xl md:text-5xl text-balance">
+            Dr. Tomiwa Johnson
+          </h2>
 
-            <h2 className="font-serif-display text-3xl font-bold leading-tight text-[#1A2F26] sm:text-4xl md:text-5xl text-balance">
-              One chair, one standard, one year of serious reading
-            </h2>
+          <div className="mt-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#B8924A]">
+            Founder and Selection Committee Chair
+          </div>
 
-            <p className="mt-6 text-base leading-relaxed text-[#5C6B5F] md:text-lg">
-              The selection process is steered personally by Dr. Tomiwa Johnson.
-              He reviews hundreds of independent titles each year to discover the
-              rare few that match his standard for intellectual depth and
-              narrative craft. There is no committee bureaucracy. Every decision
-              comes down to one reader who cares about the lasting life of a book.
-            </p>
-
-            <div className="mt-8 flex flex-col gap-5">
-              {pillars.map((pillar) => (
-                <div key={pillar.title} className="flex gap-4">
-                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[#1A2F26] text-[#B8924A]">
-                    <pillar.icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-serif-display text-lg font-semibold text-[#1A2F26]">
-                      {pillar.title}
-                    </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-[#5C6B5F]">
-                      {pillar.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#5C6B5F] md:text-lg">
+            Dr. Tomiwa Johnson founded ThoughtReadersClub in 2017 with a simple
+            conviction that the best independent writing deserves a longer, more
+            serious conversation. With roots in narrative structure and
+            community building, he leads the selection committee, steers the
+            annual residency cycle, and personally reads every submission that
+            reaches the shortlist. There is no committee bureaucracy. Every
+            decision comes down to one reader who cares about the lasting life
+            of a book.
+          </p>
         </div>
+
+        {/* Three pillars */}
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
+          {pillars.map((pillar, idx) => (
+            <motion.div
+              key={pillar.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="rounded-2xl border border-[#E5DCC4] bg-white p-7 transition-all hover:shadow-lg hover:shadow-[#1A2F26]/8"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1A2F26] text-[#B8924A]">
+                <pillar.icon className="h-5 w-5" />
+              </div>
+              <h3 className="mt-5 font-serif-display text-lg font-semibold text-[#1A2F26]">
+                {pillar.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-[#5C6B5F]">
+                {pillar.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Trust badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-10 flex items-center justify-center gap-3 text-sm text-[#5C6B5F]"
+        >
+          <ShieldCheck className="h-5 w-5 text-[#B8924A]" />
+          <span>
+            Every submission is read in full and answered personally by Dr.
+            Tomiwa Johnson.
+          </span>
+        </motion.div>
       </div>
     </section>
   );

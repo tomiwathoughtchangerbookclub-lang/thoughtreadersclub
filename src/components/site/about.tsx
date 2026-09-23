@@ -25,7 +25,7 @@ export function About() {
               <div className="absolute -bottom-6 -right-6 hidden md:block">
                 <div className="rounded-2xl bg-[#1A2F26] px-8 py-6 text-[#F7F2E8] shadow-xl">
                   <div className="font-serif-display text-4xl font-bold text-[#B8924A]">
-                    2021
+                    2017
                   </div>
                   <div className="mt-1 text-xs uppercase tracking-[0.2em] text-[#F7F2E8]/70">
                     Year founded

@@ -4,17 +4,17 @@ import { motion } from "framer-motion";
 
 const timeline = [
   {
-    year: "2021",
+    year: "2017",
     title: "The First Reading Circle",
     body: "A handful of readers gathered in a borrowed study to discuss an overlooked debut novel. That single evening became the model for everything that followed: small rooms, serious questions, and books that deserved more attention than they had received.",
   },
   {
-    year: "2023",
+    year: "2020",
     title: "Five Thousand Members",
     body: "Through quiet recommendations and word of mouth, the community crossed five thousand engaged readers. We formalized the weekly book discussion format and opened our first private digital channels for international members.",
   },
   {
-    year: "2024",
+    year: "2023",
     title: "First Annual Residency",
     body: "We launched the structured twelve month residency program with our inaugural cohort of fifteen authors. Each title received sustained, high signal engagement that translated into lasting review velocity and cultural recognition.",
   },

@@ -52,7 +52,7 @@ export function Footer() {
               ].map((s) => (
                 <a
                   key={s.label}
-                  href="mailto:committee@thoughtreadersclub.com"
+                  href="mailto:drtomiwathoughtreadersclub@gmail.com"
                   aria-label={s.label}
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-[#F7F2E8]/15 text-[#F7F2E8]/70 transition-colors hover:border-[#B8924A] hover:bg-[#B8924A] hover:text-[#1A2F26]"
                 >
@@ -130,7 +130,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-[#F7F2E8]/10 pt-8 md:flex-row">
           <p className="text-xs text-[#F7F2E8]/50">
-            © 2026 ThoughtReadersClub. All rights reserved. Founded by Dr.
+            © 2017 ThoughtReadersClub. All rights reserved. Founded by Dr.
             Tomiwa Johnson.
           </p>
           <div className="flex gap-6 text-xs text-[#F7F2E8]/50">

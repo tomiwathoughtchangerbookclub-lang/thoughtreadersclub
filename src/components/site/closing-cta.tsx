@@ -51,7 +51,7 @@ export function ClosingCta() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <a
-              href="mailto:committee@thoughtreadersclub.com"
+              href="mailto:drtomiwathoughtreadersclub@gmail.com"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-[#F7F2E8]/30 px-8 py-4 text-sm font-semibold text-[#F7F2E8] transition-all hover:border-[#B8924A] hover:text-[#B8924A]"
             >
               <Mail className="h-4 w-4" />

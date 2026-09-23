@@ -53,6 +53,35 @@ export default function ApplyPage() {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Construct email body with all form data and send directly to Dr. Tomiwa Johnson's email
+    const toEmail = "drtomiwathoughtreadersclub@gmail.com";
+    const subject = `ThoughtReadersClub Application: ${form.bookTitle || "Untitled"} by ${form.name || "Applicant"}`;
+    const body = [
+      `New application for the ThoughtReadersClub residency.`,
+      ``,
+      `--- Applicant Details ---`,
+      `Name: ${form.name}`,
+      `Email: ${form.email}`,
+      `Role: ${form.role}`,
+      ``,
+      `--- Book Details ---`,
+      `Title: ${form.bookTitle}`,
+      `Genre: ${form.genre}`,
+      `Publisher: ${form.publisher || "Not specified"}`,
+      `Page count: ${form.pageCount || "Not specified"}`,
+      ``,
+      `--- Synopsis ---`,
+      `${form.synopsis}`,
+      ``,
+      `--- Why this book belongs in ThoughtReadersClub ---`,
+      `${form.why}`,
+      ``,
+      `--- Additional notes ---`,
+      `${form.message || "None"}`,
+    ].join("\n");
+
+    const mailtoLink = `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
     setSubmitted(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -114,13 +143,19 @@ export default function ApplyPage() {
                 <CheckCircle2 className="h-10 w-10 text-[#B8924A]" />
               </div>
               <h2 className="mt-6 font-serif-display text-3xl font-bold text-[#1A2F26]">
-                Thank you for your submission
+                Your email is ready to send
               </h2>
               <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-[#5C6B5F]">
-                Your application for the 2026 residency cycle has been received.
-                Dr. Tomiwa Johnson will read your submission in full and respond
-                personally within four weeks. From all of us at
-                ThoughtReadersClub, thank you for sharing your work.
+                Your email app should now be open with all your application
+                details pre filled and addressed to Dr. Tomiwa Johnson at
+                drtomiwathoughtreadersclub@gmail.com. Just hit send and he will
+                read your submission in full and reply personally within four
+                weeks.
+              </p>
+              <p className="mx-auto mt-3 max-w-md text-xs leading-relaxed text-[#5C6B5F]/70">
+                If your email app did not open, you can send the details
+                manually to drtomiwathoughtreadersclub@gmail.com with the subject
+                ThoughtReadersClub Application.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <button
