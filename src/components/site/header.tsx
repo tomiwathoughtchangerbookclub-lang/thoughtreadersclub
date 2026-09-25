@@ -36,9 +36,9 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
       }`}
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        {/* Top row: logo on the left, mobile menu button on the right */}
-        <div className="flex items-center justify-between">
-          <Link href="/#top" className="flex items-center gap-3 group">
+        {/* Single row: logo on the left, nav spread across the remaining width */}
+        <div className="flex items-center justify-between gap-8">
+          <Link href="/#top" className="flex items-center gap-3 group flex-shrink-0">
             <Image
               src="/images/logo.png"
               alt="ThoughtReadersClub logo"
@@ -56,27 +56,27 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
             </span>
           </Link>
 
+          {/* Desktop nav: spread evenly across the remaining width */}
+          <nav className="hidden lg:flex items-center justify-between flex-1 max-w-2xl">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="nav-link text-sm font-medium uppercase tracking-[0.2em] text-[#F7F2E8]/85 transition-colors hover:text-[#B8924A]"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden text-[#F7F2E8]"
+            className="lg:hidden text-[#F7F2E8] flex-shrink-0"
             aria-label="Toggle menu"
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
-
-        {/* Desktop nav: full-width row below the logo, links spread evenly */}
-        <nav className="hidden lg:flex items-center justify-between mt-4 pt-4 border-t border-[#B8924A]/20">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="nav-link text-sm font-medium uppercase tracking-[0.2em] text-[#F7F2E8]/85 transition-colors hover:text-[#B8924A]"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
       </div>
 
       {/* Mobile menu */}
