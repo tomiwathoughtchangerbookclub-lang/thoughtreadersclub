@@ -62,7 +62,7 @@ export function Committee() {
           </h2>
 
           <div className="mt-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#B8924A]">
-            Founder and Selection Committee Chair
+            Co-Founder and Selection Committee Chair
           </div>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#5C6B5F] md:text-lg">

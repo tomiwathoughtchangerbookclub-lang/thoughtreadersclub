@@ -6,13 +6,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "Philosophy", href: "/#philosophy" },
-  { label: "Residency", href: "/#residency" },
-  { label: "Membership", href: "/#membership" },
-  { label: "Committee", href: "/#committee" },
-  { label: "Voices", href: "/#voices" },
-  { label: "Journal", href: "/#journal" },
-  { label: "Books", href: "/books" },
+  { label: "Home", href: "/#top" },
+  { label: "About", href: "/#about" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Community", href: "/#community" },
+  { label: "Stories", href: "/#stories" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function SiteHeader({ solid = false }: { solid?: boolean }) {
@@ -37,7 +36,7 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/#top" className="flex items-center gap-3 group">
           <Image
             src="/images/logo.png"
             alt="ThoughtReadersClub logo"
@@ -67,15 +66,6 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
-          <Link
-            href="/apply"
-            className="inline-flex items-center gap-2 rounded-full bg-[#B8924A] px-5 py-2.5 text-sm font-semibold text-[#1A2F26] transition-all hover:bg-[#D4AF6E] hover:shadow-lg hover:shadow-[#B8924A]/30"
-          >
-            Become a Member
-          </Link>
-        </div>
-
         <button
           onClick={() => setOpen(!open)}
           className="lg:hidden text-[#F7F2E8]"
@@ -98,13 +88,6 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/apply"
-              onClick={() => setOpen(false)}
-              className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-[#B8924A] px-5 py-3 text-sm font-semibold text-[#1A2F26]"
-            >
-              Become a Member
-            </Link>
           </nav>
         </div>
       )}

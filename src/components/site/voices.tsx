@@ -33,7 +33,7 @@ const testimonials = [
 export function Voices() {
   return (
     <section
-      id="voices"
+      id="community"
       className="relative overflow-hidden bg-[#1A2F26] py-24 md:py-32"
     >
       <div className="absolute -left-32 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-[#B8924A]/10 blur-3xl" />
@@ -44,7 +44,7 @@ export function Voices() {
           <div className="mb-5 flex items-center justify-center gap-3">
             <span className="h-px w-10 bg-[#B8924A]" />
             <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B8924A]">
-              Voices from the Hub
+              Community
             </span>
             <span className="h-px w-10 bg-[#B8924A]" />
           </div>
@@ -61,7 +61,7 @@ export function Voices() {
               />
             ))}
             <span className="ml-2 text-sm text-[#F7F2E8]/70">
-              4.9 average from 2,000+ active members
+              4.9 average from 2,000+ active readers
             </span>
           </div>
         </div>

@@ -14,37 +14,37 @@ const services = [
     icon: CalendarRange,
     title: "Structured Reading Journey",
     description:
-      "When a book is selected, it enters a twelve month ecosystem of guided deep engagement with an elite reader base. Every month brings new discussion prompts, hosted book groups, and structured reading pathways that turn a single title into a year long conversation.",
+      "When your book is selected, it enters a twelve month ecosystem of guided deep engagement with an elite reader base. Every month brings new discussion prompts, hosted book groups, and structured reading pathways that turn a single title into a year long conversation.",
   },
   {
     icon: MessageSquareQuote,
     title: "High Signal Book Discussions",
     description:
-      "Our private channels and active book discussions generate consistent analytical commentary that reflects the true depth of each work. Members meet weekly in small groups to examine language, structure, and the cultural questions a book raises.",
+      "Our private channels and active book discussions generate consistent analytical commentary that reflects the true depth of your work. Readers meet weekly in small groups to examine language, structure, and the cultural questions your book raises.",
   },
   {
     icon: TrendingUp,
     title: "Sustainable Review Velocity",
     description:
-      "We cultivate long tail momentum for every author by guiding an elite reader base through structured engagement, ensuring sustainable review velocity and permanent intellectual recognition rather than a one week sales spike.",
+      "We cultivate long tail momentum for your work by guiding an elite reader base through structured engagement, ensuring sustainable review velocity and permanent intellectual recognition rather than a one week sales spike.",
   },
   {
     icon: Users,
     title: "Selection Committee Access",
     description:
-      "Selected authors work directly with our committee of literary specialists, academic minds, and cultural curators. You get honest editorial feedback, network introductions, and a partner invested in the long life of your work.",
+      "Selected authors work directly with our committee of literary specialists and cultural curators. You get honest editorial feedback, network introductions, and a partner invested in the long life of your work.",
   },
 ];
 
 export function Residency() {
   return (
-    <section id="residency" className="relative bg-[#1A2F26] py-24 md:py-32">
+    <section id="experience" className="relative bg-[#1A2F26] py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-5 flex items-center justify-center gap-3">
             <span className="h-px w-10 bg-[#B8924A]" />
             <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B8924A]">
-              The Residency
+              The Experience
             </span>
             <span className="h-px w-10 bg-[#B8924A]" />
           </div>
@@ -54,9 +54,10 @@ export function Residency() {
           </h2>
 
           <p className="mt-6 text-base leading-relaxed text-[#F7F2E8]/70 md:text-lg">
-            The Residency is not a passive book club selection. It is an active,
+            The residency is not a passive book club selection. It is an active,
             twelve month immersion program that treats each selected title as a
-            permanent cultural contribution worth a sustained conversation.
+            permanent cultural contribution worth a sustained conversation
+            between you and a serious global readership.
           </p>
         </div>
 

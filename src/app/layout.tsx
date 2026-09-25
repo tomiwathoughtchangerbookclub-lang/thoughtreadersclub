@@ -18,16 +18,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ThoughtReadersClub | A Private Literary Society for Curious Minds",
-  description: "ThoughtReadersClub is a private literary society that connects brilliant independent authors with an elite global reading community for a year long journey of deep literary engagement. Founded by Dr. Tomiwa Johnson.",
-  keywords: ["ThoughtReadersClub", "literary society", "book club", "readers club", "independent authors", "Dr. Tomiwa Johnson", "book community", "literary engagement"],
+  title: "ThoughtReadersClub | A Private Literary Society for Authors",
+  description: "ThoughtReadersClub is a private literary society that gives independent authors a structured twelve month residency with an elite global reading community. Co-founded by Dr. Tomiwa Johnson.",
+  keywords: ["ThoughtReadersClub", "literary society", "book club", "readers club", "independent authors", "Dr. Tomiwa Johnson", "author residency", "literary engagement"],
   authors: [{ name: "Dr. Tomiwa Johnson" }],
   icons: {
     icon: "/images/logo.png",
   },
   openGraph: {
-    title: "ThoughtReadersClub | A Private Literary Society",
-    description: "Where intellectual curiosity meets companionable consideration. We connect brilliant independent authors with an elite global reading community.",
+    title: "ThoughtReadersClub | A Private Literary Society for Authors",
+    description: "A structured twelve month residency for independent authors. Co-founded by Dr. Tomiwa Johnson.",
     siteName: "ThoughtReadersClub",
     type: "website",
   },

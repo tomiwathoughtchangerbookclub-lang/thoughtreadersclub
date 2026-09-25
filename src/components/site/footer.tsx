@@ -5,18 +5,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 const quickLinks = [
-  { label: "Philosophy", href: "/#philosophy" },
-  { label: "The Residency", href: "/#residency" },
-  { label: "Membership", href: "/#membership" },
-  { label: "Committee", href: "/#committee" },
-  { label: "Voices", href: "/#voices" },
+  { label: "Home", href: "/#top" },
+  { label: "About", href: "/#about" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Community", href: "/#community" },
+  { label: "Stories", href: "/#stories" },
 ];
 
 const moreLinks = [
-  { label: "The Journal", href: "/#journal" },
+  { label: "Contact", href: "/#contact" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Become a Member", href: "/apply" },
-  { label: "Books We Read", href: "/books" },
+  { label: "Committee", href: "/#committee" },
+  { label: "Why Choose Us", href: "/#why-choose" },
 ];
 
 export function Footer() {
@@ -26,7 +26,7 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr_1fr_1.2fr]">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/#top" className="flex items-center gap-3">
               <Image
                 src="/images/logo.png"
                 alt="ThoughtReadersClub logo"
@@ -135,7 +135,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-[#F7F2E8]/10 pt-8 md:flex-row">
           <p className="text-xs text-[#F7F2E8]/50">
-            © 2017 ThoughtReadersClub. All rights reserved. Founded by Dr.
+            © 2017 ThoughtReadersClub. All rights reserved. Co-Founded by Dr.
             Tomiwa Johnson.
           </p>
           <div className="flex gap-6 text-xs text-[#F7F2E8]/50">

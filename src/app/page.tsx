@@ -4,12 +4,10 @@ import { About } from "@/components/site/about";
 import { Residency } from "@/components/site/residency";
 import { WhyChooseUs } from "@/components/site/why-choose";
 import { Story } from "@/components/site/story";
-import { Membership } from "@/components/site/membership";
 import { Committee } from "@/components/site/committee";
 import { Voices } from "@/components/site/voices";
 import { Faq } from "@/components/site/faq";
-import { Journal } from "@/components/site/journal";
-import { ClosingCta } from "@/components/site/closing-cta";
+import { ContactForm } from "@/components/site/contact-form";
 import { Footer } from "@/components/site/footer";
 
 export default function Home() {
@@ -22,12 +20,10 @@ export default function Home() {
         <Residency />
         <WhyChooseUs />
         <Story />
-        <Membership />
         <Committee />
         <Voices />
         <Faq />
-        <Journal />
-        <ClosingCta />
+        <ContactForm />
       </main>
       <Footer />
     </div>

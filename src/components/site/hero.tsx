@@ -1,11 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
-import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 
 const stats = [
-  { value: "21,000+", label: "Global Hub Members" },
+  { value: "21,000+", label: "Global Hub Readers" },
   { value: "2,000+", label: "Active Book Readers" },
   { value: "150+", label: "Reviews per Selection" },
   { value: "15", label: "Authors per Annual Cycle" },
@@ -35,37 +34,20 @@ export function Hero() {
           <div className="mb-6 flex items-center gap-3">
             <span className="h-px w-12 bg-[#B8924A]" />
             <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B8924A]">
-              A Private Literary Society
+              A Private Literary Society for Authors
             </span>
           </div>
 
           <h1 className="font-serif-display text-4xl font-bold leading-[1.1] text-[#F7F2E8] sm:text-5xl md:text-6xl lg:text-7xl text-balance">
-            Where curious minds meet{" "}
-            <span className="italic text-[#D4AF6E]">books that deserve</span> a
-            longer conversation
+            Where your book earns a year long conversation with serious readers
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#F7F2E8]/80 md:text-xl">
-            We connect brilliant independent authors with a small, serious global
-            reading community for a full year of structured literary engagement.
-            No noise. No trends. Just books worth keeping.
+            ThoughtReadersClub is a private literary society that gives
+            independent authors a structured twelve month residency with an
+            elite global reading community. No noise. No trends. Just books
+            worth keeping, and readers who treat them that way.
           </p>
-
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Link
-              href="/apply"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#B8924A] px-8 py-4 text-sm font-semibold text-[#1A2F26] transition-all hover:bg-[#D4AF6E] hover:shadow-xl hover:shadow-[#B8924A]/30"
-            >
-              Apply for the Residency
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="/books"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#F7F2E8]/30 px-8 py-4 text-sm font-semibold text-[#F7F2E8] transition-all hover:border-[#B8924A] hover:text-[#B8924A]"
-            >
-              Explore the Society
-            </Link>
-          </div>
         </motion.div>
 
         {/* Stats strip */}

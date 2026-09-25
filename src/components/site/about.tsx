@@ -5,7 +5,7 @@ import { Feather } from "lucide-react";
 
 export function About() {
   return (
-    <section id="philosophy" className="relative bg-paper py-24 md:py-32">
+    <section id="about" className="relative bg-paper py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Image */}
@@ -47,7 +47,7 @@ export function About() {
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-10 bg-[#B8924A]" />
               <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B8924A]">
-                Our Philosophy
+                About ThoughtReadersClub
               </span>
             </div>
 
@@ -58,10 +58,10 @@ export function About() {
             <p className="mt-6 text-base leading-relaxed text-[#5C6B5F] md:text-lg">
               ThoughtReadersClub is built on the belief that literature still
               matters as a permanent cultural contribution, not just a passing
-              release cycle. We scout independently published works that deserve a
-              legacy spotlight and bring them to a community of careful, engaged
-              readers who treat each book as a long conversation rather than a
-              quick consumption.
+              release cycle. We scout independently published works that
+              deserve a legacy spotlight and bring them to a community of
+              careful, engaged readers who treat each book as a long
+              conversation rather than a quick consumption.
             </p>
 
             <p className="mt-4 text-base leading-relaxed text-[#5C6B5F] md:text-lg">
@@ -81,7 +81,7 @@ export function About() {
                   Dr. Tomiwa Johnson
                 </div>
                 <div className="text-sm text-[#5C6B5F]">
-                  Founder and Selection Committee Chair
+                  Co-Founder and Selection Committee Chair
                 </div>
               </div>
             </div>

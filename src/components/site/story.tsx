@@ -27,13 +27,13 @@ const timeline = [
 
 export function Story() {
   return (
-    <section id="story" className="relative bg-[#F7F2E8] py-24 md:py-32">
+    <section id="stories" className="relative bg-[#F7F2E8] py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-5 flex items-center justify-center gap-3">
             <span className="h-px w-10 bg-[#B8924A]" />
             <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B8924A]">
-              How We Operate
+              Stories
             </span>
             <span className="h-px w-10 bg-[#B8924A]" />
           </div>
@@ -46,11 +46,11 @@ export function Story() {
             ThoughtReadersClub operates strictly as an independent private
             literary society and curated cultural hub. We are entirely
             transparent about our structure. Our community is built on mutual
-            respect and intellectual rigor, not commercial pay to play marketing
-            models. We fund our distribution, community infrastructure, and
-            engagement programs through our private network, so that our
-            selection criteria remain focused on literary merit and narrative
-            impact.
+            respect and intellectual rigor, not commercial pay to play
+            marketing models. We fund our distribution, community
+            infrastructure, and engagement programs through our private
+            network, so that our selection criteria remain focused on literary
+            merit and narrative impact.
           </p>
         </div>
 
