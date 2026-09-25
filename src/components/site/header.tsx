@@ -35,55 +35,60 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
           : "bg-transparent py-5"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
-        <Link href="/#top" className="flex items-center gap-3 group">
-          <Image
-            src="/images/logo.png"
-            alt="ThoughtReadersClub logo"
-            width={44}
-            height={44}
-            className="rounded-full transition-transform group-hover:rotate-6"
-          />
-          <span className="flex flex-col leading-none">
-            <span className="font-serif-display text-xl font-bold tracking-tight text-[#F7F2E8]">
-              Thought<span className="text-[#B8924A]">Readers</span>Club
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        {/* Top row: logo on the left, mobile menu button on the right */}
+        <div className="flex items-center justify-between">
+          <Link href="/#top" className="flex items-center gap-3 group">
+            <Image
+              src="/images/logo.png"
+              alt="ThoughtReadersClub logo"
+              width={44}
+              height={44}
+              className="rounded-full transition-transform group-hover:rotate-6"
+            />
+            <span className="flex flex-col leading-none">
+              <span className="font-serif-display text-xl font-bold tracking-tight text-[#F7F2E8]">
+                Thought<span className="text-[#B8924A]">Readers</span>Club
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.25em] text-[#B8924A]/80">
+                A Private Literary Society
+              </span>
             </span>
-            <span className="text-[10px] uppercase tracking-[0.25em] text-[#B8924A]/80">
-              A Private Literary Society
-            </span>
-          </span>
-        </Link>
+          </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+          <button
+            onClick={() => setOpen(!open)}
+            className="lg:hidden text-[#F7F2E8]"
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+
+        {/* Desktop nav: full-width row below the logo, links spread evenly */}
+        <nav className="hidden lg:flex items-center justify-between mt-4 pt-4 border-t border-[#B8924A]/20">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="nav-link text-sm font-medium text-[#F7F2E8]/85 transition-colors hover:text-[#B8924A]"
+              className="nav-link text-sm font-medium uppercase tracking-[0.2em] text-[#F7F2E8]/85 transition-colors hover:text-[#B8924A]"
             >
               {link.label}
             </Link>
           ))}
         </nav>
-
-        <button
-          onClick={() => setOpen(!open)}
-          className="lg:hidden text-[#F7F2E8]"
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
       </div>
 
+      {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-[#1A2F26] border-t border-[#B8924A]/20 px-5 py-6">
+        <div className="lg:hidden bg-[#1A2F26] border-t border-[#B8924A]/20 px-5 py-6 mt-3">
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-sm font-medium text-[#F7F2E8]/85 transition-colors hover:text-[#B8924A]"
+                className="text-sm font-medium uppercase tracking-[0.2em] text-[#F7F2E8]/85 transition-colors hover:text-[#B8924A]"
               >
                 {link.label}
               </Link>
