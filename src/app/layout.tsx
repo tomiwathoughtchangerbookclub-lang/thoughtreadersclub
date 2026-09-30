@@ -26,7 +26,10 @@ export const metadata: Metadata = {
     icon: "/images/logo.png",
   },
   verification: {
-    google: "NDxD1JCfUPiIBFp9zQU0UL6DtNfiRKKO2Vh1IRjX5e0",
+    google: [
+      "NDxD1JCfUPiIBFp9zQU0UL6DtNfiRKKO2Vh1IRjX5e0",
+      "wBNWOSlb9gAbn4Dn0t4VHd9DMc9sQrv2llLw8CZvt9E",
+    ],
   },
   openGraph: {
     title: "ThoughtReadersClub | A Private Literary Society for Authors",
