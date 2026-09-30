@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/images/logo.png",
   },
+  verification: {
+    google: "NDxD1JCfUPiIBFp9zQU0UL6DtNfiRKKO2Vh1IRjX5e0",
+  },
   openGraph: {
     title: "ThoughtReadersClub | A Private Literary Society for Authors",
     description: "A structured twelve month residency for independent authors. Co-founded by Dr. Tomiwa Johnson.",
