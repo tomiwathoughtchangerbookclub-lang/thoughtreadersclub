@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, Calendar, Clock } from "lucide-react";
 import Image from "next/image";
 
 const book = {
@@ -13,6 +13,12 @@ const book = {
   readDate: "November 2026",
   readTime: "10 hours",
   banner: "/images/books/insider.jpg",
+  themes: [
+    "Terrorism & Global Threats",
+    "Betrayal & Trust",
+    "Intelligence & Espionage",
+    "Courage & Sacrifice",
+  ],
   review:
     "Most spy fiction is about gadgets and gunfights. Insider is about what it feels like to do the work, and what that work costs the person doing it. Red Ferne is a retired Australian intelligence professional and former soldier, and it shows on nearly every page, in the need-to-know tension, the legal limits on what an analyst may look at, and the dry comedy of a soldier trying to decode civilian office life. Nat West carries the novel. She is stubborn, sharp-tongued and very bad at asking for help, and her flaws cost her. Her PTSD is treated with unusual honesty, from the vivid flashback in the interrogation room to small habits like checking exits in a Canberra bar. The Baghdad chapters are the high point, and the Brisbane climax is a smart escalation built on analysts hunting phone numbers in data while the clock runs down. The supporting cast gives the book warmth, and Nat's slow move from lone wolf to team player is believable throughout. A strong, authentic thriller for readers who prefer procedure and character over explosions.",
   reviewer: "Dr. Tomiwa Johnson",
@@ -26,6 +32,7 @@ export function WhatWeReading() {
       className="relative bg-[#F7F2E8] py-20 md:py-28"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        {/* Section title */}
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-5 flex items-center justify-center gap-3">
             <span className="h-px w-10 bg-[#B8924A]" />
@@ -46,15 +53,77 @@ export function WhatWeReading() {
           </p>
         </div>
 
-        {/* Two-column layout: Author Spotlight banner on the left, Review on the right, both same height */}
+        {/* Book details header block — full width on top */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+          className="mt-12 rounded-2xl border border-[#E5DCC4] bg-white p-7 md:p-10 shadow-lg shadow-[#1A2F26]/8"
+        >
+          {/* Genre + meta row */}
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs uppercase tracking-[0.2em]">
+            <span className="rounded-full bg-[#1A2F26] px-3 py-1 text-[#F7F2E8]">
+              {book.genre}
+            </span>
+            <span className="inline-flex items-center gap-1.5 text-[#5C6B5F]">
+              <Calendar className="h-3.5 w-3.5" />
+              {book.readDate}
+            </span>
+            <span className="inline-flex items-center gap-1.5 text-[#5C6B5F]">
+              <Clock className="h-3.5 w-3.5" />
+              {book.readTime}
+            </span>
+          </div>
+
+          {/* Title */}
+          <h3 className="mt-5 font-serif-display text-4xl font-bold text-[#1A2F26] md:text-5xl">
+            {book.title}
+          </h3>
+          <p className="mt-2 text-base text-[#5C6B5F] md:text-lg">
+            by <span className="font-semibold text-[#1A2F26]">{book.author}</span>{" "}
+            &middot; {book.year}
+          </p>
+
+          {/* Rating */}
+          <div className="mt-4 flex items-center gap-2">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <Star
+                key={i}
+                className={`h-5 w-5 ${
+                  i <= Math.round(book.rating)
+                    ? "fill-[#B8924A] text-[#B8924A]"
+                    : "text-[#E5DCC4]"
+                }`}
+              />
+            ))}
+            <span className="ml-2 text-sm font-semibold text-[#5C6B5F]">
+              {book.rating.toFixed(1)} / 5
+            </span>
+          </div>
+
+          {/* Theme tags */}
+          <div className="mt-6 flex flex-wrap gap-2">
+            {book.themes.map((theme) => (
+              <span
+                key={theme}
+                className="rounded-full border border-[#E5DCC4] bg-[#F7F2E8] px-3 py-1 text-xs font-medium text-[#1A2F26]"
+              >
+                {theme}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Two-column layout: Author Spotlight banner (left) + Review (right), both same height */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8 }}
-          className="mt-14 grid gap-8 lg:grid-cols-2 lg:gap-10 items-stretch"
+          className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10 items-stretch"
         >
-          {/* Author Spotlight banner */}
+          {/* Author Spotlight banner — left */}
           <div className="relative flex flex-col">
             <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl shadow-[#1A2F26]/30 bg-[#1A2F26]">
               <Image
@@ -69,42 +138,17 @@ export function WhatWeReading() {
             </div>
           </div>
 
-          {/* Review card - same height as the banner */}
+          {/* Review box — right, same height as banner */}
           <div className="flex flex-col rounded-2xl border border-[#E5DCC4] bg-white p-7 md:p-9 shadow-lg shadow-[#1A2F26]/8">
-            <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em]">
-              <span className="rounded-full bg-[#1A2F26] px-3 py-1 text-[#F7F2E8]">
-                {book.genre}
-              </span>
-              <span className="text-[#5C6B5F]">{book.readDate}</span>
-              <span className="text-[#5C6B5F]">&middot; {book.readTime}</span>
-            </div>
-
-            <h3 className="mt-4 font-serif-display text-3xl font-bold text-[#1A2F26] md:text-4xl">
-              {book.title}
-            </h3>
-            <p className="mt-1 text-base text-[#5C6B5F]">
-              by <span className="font-semibold text-[#1A2F26]">{book.author}</span> &middot; {book.year}
-            </p>
-
-            <div className="mt-4 flex items-center gap-2">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star
-                  key={i}
-                  className={`h-5 w-5 ${
-                    i <= Math.round(book.rating)
-                      ? "fill-[#B8924A] text-[#B8924A]"
-                      : "text-[#E5DCC4]"
-                  }`}
-                />
-              ))}
-              <span className="ml-2 text-sm font-semibold text-[#5C6B5F]">
-                {book.rating.toFixed(1)} / 5
+            <div className="flex items-center gap-3">
+              <Quote className="h-8 w-8 text-[#B8924A]" />
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B8924A]">
+                Dr. Tomiwa&apos;s Review
               </span>
             </div>
 
-            <div className="mt-6 flex-1 border-t border-[#E5DCC4] pt-6">
-              <Quote className="h-7 w-7 text-[#B8924A]/50" />
-              <p className="mt-3 text-sm leading-relaxed text-[#5C6B5F] md:text-base">
+            <div className="mt-5 flex-1">
+              <p className="text-sm leading-relaxed text-[#5C6B5F] md:text-base">
                 {book.review}
               </p>
             </div>
