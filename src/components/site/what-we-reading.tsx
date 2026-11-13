@@ -33,7 +33,7 @@ export function WhatWeReading() {
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         {/* Section title */}
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl text-center" data-wwr-intro="1">
           <div className="mb-5 flex items-center justify-center gap-3">
             <span className="h-px w-10 bg-[#B8924A]" />
             <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#B8924A]">
