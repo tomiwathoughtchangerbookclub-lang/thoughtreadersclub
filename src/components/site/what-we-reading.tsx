@@ -53,7 +53,7 @@ export function WhatWeReading() {
           </p>
         </div>
 
-        {/* Book details header — flat topic header spanning full width on top */}
+        {/* Book title header — flat, full width on top (topic for the two columns below) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +76,7 @@ export function WhatWeReading() {
             </span>
           </div>
 
-          {/* Title */}
+          {/* Title — the topic */}
           <h3 className="mt-5 font-serif-display text-4xl font-bold text-[#1A2F26] md:text-6xl">
             {book.title}
           </h3>
@@ -84,38 +84,9 @@ export function WhatWeReading() {
             by <span className="font-semibold text-[#1A2F26]">{book.author}</span>{" "}
             &middot; {book.year}
           </p>
-
-          {/* Rating */}
-          <div className="mt-4 flex items-center gap-2">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <Star
-                key={i}
-                className={`h-5 w-5 ${
-                  i <= Math.round(book.rating)
-                    ? "fill-[#B8924A] text-[#B8924A]"
-                    : "text-[#E5DCC4]"
-                }`}
-              />
-            ))}
-            <span className="ml-2 text-sm font-semibold text-[#5C6B5F]">
-              {book.rating.toFixed(1)} / 5
-            </span>
-          </div>
-
-          {/* Theme tags */}
-          <div className="mt-6 flex flex-wrap gap-2">
-            {book.themes.map((theme) => (
-              <span
-                key={theme}
-                className="rounded-full border border-[#1A2F26]/30 bg-transparent px-4 py-1.5 text-xs font-medium text-[#1A2F26]"
-              >
-                {theme}
-              </span>
-            ))}
-          </div>
         </motion.div>
 
-        {/* Two-column layout: Author Spotlight banner (left) + Review (right), both same height */}
+        {/* Two-column layout: Author Spotlight banner (left) + Review box (right), both same height */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -138,21 +109,51 @@ export function WhatWeReading() {
             </div>
           </div>
 
-          {/* Review box — right, same height as banner */}
+          {/* Review box — right, same height as banner. Contains rating + themes + review text. */}
           <div className="flex flex-col rounded-2xl border border-[#E5DCC4] bg-white p-7 md:p-9 shadow-lg shadow-[#1A2F26]/8">
-            <div className="flex items-center gap-3">
-              <Quote className="h-8 w-8 text-[#B8924A]" />
+            {/* Rating + review label — same line */}
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-2">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star
+                    key={i}
+                    className={`h-5 w-5 ${
+                      i <= Math.round(book.rating)
+                        ? "fill-[#B8924A] text-[#B8924A]"
+                        : "text-[#E5DCC4]"
+                    }`}
+                  />
+                ))}
+                <span className="ml-2 text-sm font-semibold text-[#5C6B5F]">
+                  {book.rating.toFixed(1)} / 5
+                </span>
+              </div>
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B8924A]">
                 Dr. Tomiwa&apos;s Review
               </span>
             </div>
 
-            <div className="mt-5 flex-1">
-              <p className="text-sm leading-relaxed text-[#5C6B5F] md:text-base">
+            {/* Theme tags */}
+            <div className="mt-5 flex flex-wrap gap-2">
+              {book.themes.map((theme) => (
+                <span
+                  key={theme}
+                  className="rounded-full border border-[#1A2F26]/30 bg-transparent px-3 py-1 text-xs font-medium text-[#1A2F26]"
+                >
+                  {theme}
+                </span>
+              ))}
+            </div>
+
+            {/* Review text — "Most spy fiction..." */}
+            <div className="mt-5 flex-1 border-t border-[#E5DCC4] pt-5">
+              <Quote className="h-7 w-7 text-[#B8924A]/50" />
+              <p className="mt-3 text-sm leading-relaxed text-[#5C6B5F] md:text-base">
                 {book.review}
               </p>
             </div>
 
+            {/* Reviewer footer */}
             <div className="mt-6 flex items-center gap-3 border-t border-[#E5DCC4] pt-5">
               <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#1A2F26]">
                 <Image
