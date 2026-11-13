@@ -17,11 +17,11 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         <Hero />
+        <WhatWeReading />
         <About />
         <Residency />
         <WhyChooseUs />
         <Story />
-        <WhatWeReading />
         <Committee />
         <Voices />
         <Faq />

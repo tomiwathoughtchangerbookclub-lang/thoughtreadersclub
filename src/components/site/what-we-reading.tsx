@@ -57,11 +57,11 @@ export function WhatWeReading() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8 }}
-          className="mt-16 grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16 items-start"
+          className="mt-16 grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-12 items-stretch"
         >
-          {/* Book cover */}
-          <div className="relative mx-auto w-full max-w-sm">
-            <div className="relative aspect-[2/3] overflow-hidden rounded-lg shadow-2xl shadow-[#1A2F26]/30">
+          {/* Book cover - fills the full height of the row */}
+          <div className="relative w-full min-h-[420px] lg:min-h-[520px]">
+            <div className="relative h-full w-full overflow-hidden rounded-lg shadow-2xl shadow-[#1A2F26]/30">
               <Image
                 src={book.cover}
                 alt={`${book.title} by ${book.author} book cover`}
@@ -81,8 +81,8 @@ export function WhatWeReading() {
             </div>
           </div>
 
-          {/* Book details and review */}
-          <div>
+          {/* Book details and review - same height as cover */}
+          <div className="flex flex-col">
             <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-[#B8924A]">
               <span className="rounded-full bg-[#1A2F26] px-3 py-1 text-[#F7F2E8]">
                 {book.genre}
