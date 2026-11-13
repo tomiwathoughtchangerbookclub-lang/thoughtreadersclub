@@ -62,3 +62,4 @@ next-env.d.ts
 
 # Caddyfile is sandbox-only, not needed for Cloudflare deployment
 Caddyfile
+upload/
