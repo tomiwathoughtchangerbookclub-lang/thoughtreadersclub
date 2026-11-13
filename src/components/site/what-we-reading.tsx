@@ -53,13 +53,13 @@ export function WhatWeReading() {
           </p>
         </div>
 
-        {/* Book details header block — full width on top */}
+        {/* Book details header — flat topic header spanning full width on top */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          className="mt-12 rounded-2xl border border-[#E5DCC4] bg-white p-7 md:p-10 shadow-lg shadow-[#1A2F26]/8"
+          className="mt-12 px-1 md:px-2"
         >
           {/* Genre + meta row */}
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs uppercase tracking-[0.2em]">
@@ -77,7 +77,7 @@ export function WhatWeReading() {
           </div>
 
           {/* Title */}
-          <h3 className="mt-5 font-serif-display text-4xl font-bold text-[#1A2F26] md:text-5xl">
+          <h3 className="mt-5 font-serif-display text-4xl font-bold text-[#1A2F26] md:text-6xl">
             {book.title}
           </h3>
           <p className="mt-2 text-base text-[#5C6B5F] md:text-lg">
@@ -107,7 +107,7 @@ export function WhatWeReading() {
             {book.themes.map((theme) => (
               <span
                 key={theme}
-                className="rounded-full border border-[#E5DCC4] bg-[#F7F2E8] px-3 py-1 text-xs font-medium text-[#1A2F26]"
+                className="rounded-full border border-[#1A2F26]/30 bg-transparent px-4 py-1.5 text-xs font-medium text-[#1A2F26]"
               >
                 {theme}
               </span>
@@ -121,7 +121,7 @@ export function WhatWeReading() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8 }}
-          className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10 items-stretch"
+          className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-10 items-stretch"
         >
           {/* Author Spotlight banner — left */}
           <div className="relative flex flex-col">
