@@ -1,10 +1,10 @@
 import { SiteHeader } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
+import { WhatWeReading } from "@/components/site/what-we-reading";
 import { About } from "@/components/site/about";
 import { Residency } from "@/components/site/residency";
 import { WhyChooseUs } from "@/components/site/why-choose";
 import { Story } from "@/components/site/story";
-import { WhatWeReading } from "@/components/site/what-we-reading";
 import { Committee } from "@/components/site/committee";
 import { Voices } from "@/components/site/voices";
 import { Faq } from "@/components/site/faq";
@@ -31,4 +31,3 @@ export default function Home() {
     </div>
   );
 }
-<!-- build trigger 1794584203 -->
